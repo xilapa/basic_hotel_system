@@ -1,0 +1,45 @@
+.fonte{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fundo-claro{
+    background-color: #eeeeee;
+    color: #222831;
+}
+
+.fundo-escuro1{
+    background-color: #393e46;
+    color: #eeeeee;
+}
+
+.fundo-escuro2{
+    background-color: #222831;
+    color: #eeeeee;
+}
+
+.fundo-escuro2:hover{
+    color: #32e0c4;
+} 
+
+.fundo-escuro2-sem-link{
+    background-color: #222831;
+    color: #eeeeee;
+}
+
+.destaque{
+    color: #eeeeee;
+    font-weight: bolder;
+
+}
+
+.custom-file-input:lang(pt-br) ~ .custom-file-label::after {
+    content: "Escolher";
+  }
+  
+
+.btn-escuro:hover {
+    color: #222831;
+    background-color: #32e0c4;
+    border-color: #222831;
+  }
+

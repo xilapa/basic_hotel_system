@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Sistema de Hospedagem</title>
+        <meta charset="utf-8">     
+        <link rel="icon" href="img/hotel.png">
+       
+        <!--Carregar ícones do Font Awesome-->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+
+        <!--Carregar CSS do BootStrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!--JSs do BootStrap-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <!--Meta tag Responsiva-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--Carregar Fonte-->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+        <!--Carregar meu CSS-->
+        <link rel="stylesheet" type="text/css" href="regras.css">
+
+        <!--Carregar meu JS-->
+        <script type="text/javascript" src="validacoes.js"></script>
+    </head>
+    <header class="fonte mb-5">
+        <nav class="navbar navbar-expand-lg fundo-escuro2 shadow fixed-top mb-5 px-5 py-3">
+            <span class="navbar-brand destaque mt-1" href="#"><img class="img-fluid mr-2" src="img/hotel.png" width="30px"> Sistema de Hospedagem</span>
+            <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                  <a class="nav-link fundo-escuro2" href="#campos-hospede"><i class="fas fa-user mr-2"></i>Hóspede</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fundo-escuro2" href="#campos-hotel"><i class="fas fa-hotel mr-2"></i>Hotel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fundo-escuro2" href="#campos-quartos"><i class="fas fa-bed mr-2"></i>Quartos</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link fundo-escuro2" href="#campos-estadia"><i class="fas fa-concierge-bell mr-2"></i>Estadia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fundo-escuro2" href="#campos-pagamento"><i class="fas fa-money-bill-wave mr-2"></i>Pagamento</a>
+                </li>
+              </ul>
+            </div>
+         </nav>
+    </header>
+    
+    
+    <body class="fundo-claro fonte">
+    <a id="campos-hospede"></a>
+        <br /><br />
+    <div class="container mt-3">
+        <form action="#" method="POST" name="formulario" id="formulario'" autocomplete="on">
+            <div class="jumbotron fundo-claro shadow p-3 mb-5" >
+                <fieldset  id="hospede" class="border p-2 rounded">
+                    <legend class="w-auto"><i class="fas fa-user mr-2"></i>Hospede</legend>
+                    
+                    <div class="form-row m-2">
+                        <label for="nome" class="col-2 col-form-label">Nome</label>
+                        <input type="text" class="form-control col" id="nome" placeholder="Digite seu nome completo"   title="Seu nome deve conter no mínimo três letras" required>  
+                    </div><!--FIM DA DIV DO INPUT NAME-->
+
+                    <div class="form-row m-2">
+                        <!--CPF-->
+                        <label for="cpf" class="col-2 col-form-label">CPF</label>
+                        <input type="text" class="form-control col" id="cpf" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="123.456.789-10" title="Digite o CPF no formato 123.456.789-10" required>  
+
+                        <!--RG-->
+                        <label for="rg" class="col-2 col-form-label text-left pl-5">RG</label>
+                        <input type="text" class="form-control col" id="rg" pattern="[0-9]{1}.[0-9]{3}.[0-9]{3}" placeholder="1.234.567" title="Digite o RG no formato 1.234.567, somente números" required> 
+
+                    </div><!--FIM DA DIV DO INPUT CPF E RG-->
+                    
+                    <div class="form-row m-2">
+                        <!--DATA DE NASCIMENTO-->
+                        <label for="data-nascimento" class="col-2 col-form-label">Data de nascimento</label>
+                        <input type="date" class="form-control col" id="data-nascimento" required>  
+  
+
+                        <!--Estado Civil-->
+                        <label for="estado-civil" class="col-2 col-form-label text-left pl-5">Estado Civil</label>
+                        <select class="form-control col">
+                            <option value="S">Solteiro</option>
+                            <option value="C">Casado</option>
+                            <option value="V">Viúvo</option>
+                        </select>
+
+                    </div><!--FIM DA DIV DO INPUT DATA NASCIMENTO E ESTADO CIVIL-->
+
+                    <fieldset class="my-4 mx-3">
+                        <legend><h5>Contato</h5></legend>
+                            
+                            <!--EMAIL-->
+                            <div class="form-row my-2">    
+                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <input type="email" class="form-control col" id="email" placeholder="seunome@provedor.com"  title="Digite seu endereço de email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}" required> 
+                            </div>    
+                             
+
+                            <div class="form-row my-2">
+                                <!--TELEDONE FIXO-->
+                                <label for="tel-fixo" class="col-2 col-form-label">Telefone Fixo</label>
+                                <input type="tel" class="form-control col" id="tel-fixo" pattern="[0-9]{3} [0-9]{4}-[0-9]{4}" placeholder="DDD 1234-5678" title="Digite o telefone no formato: DDD 12345-6789" required>  
+        
+                                <!--RG-->
+                                <label for="tel-celular" class="col-2 col-form-label text-left pl-5">Celular</label>
+                                <input type="tel" class="form-control col" id="tel-celular" pattern="[0-9]{3} [0-9]{5}-[0-9]{4}" placeholder="DDD 12345-6789" title="Digite o telefone no formato: DDD 12345-6789" required> 
+        
+                            </div><!--FIM DA DIV TELEFONES-->
+
+                    </fieldset><!--FIM DO FIELDSET CONTATO-->
+
+
+                    <fieldset class="my-4 mx-3">
+                        <legend><h5>Endereço</h5></legend>
+                            
+                            <div class="form-row my-2">    
+                                <!--LOGRADOURO-->
+                                <label for="logradouro" class="col-2 col-form-label">Logradouro</label>
+                                <input type="text" class="form-control col-7" id="logradouro" placeholder="Rua, avenida, beco..."   title="Seu endereço deve conter no mínimo três letras" required> 
+
+                                <!--NÚMERO-->
+                                <label for="numero" class="col-1 col-form-label text-center"> N° </label>
+                                <input type="number" class="form-control col" id="numero" placeholder="123" title="Digite o número da sua casa" required> 
+                            </div>     
+
+                            <div class="form-row my-2">  
+                                <!--COMPLEMENTO--> 
+                                <label for="complemento" class="col-2 col-form-label">Complemento</label>
+                                <input type="text" class="form-control col" id="complemento" placeholder="Próximo a..." > 
+                            </div>
+
+                            <div class="form-row my-2">
+                                <!--CEP-->
+                                <label for="cep" class="col-2 col-form-label">CEP</label>
+                                <input type="text" class="form-control col" id="cep" pattern="[0-9]{2}.[0-9]{3}-[0-9]{3}" placeholder="12.345-330" title="Digite o CEP no formato 12.345-330" required>  
+        
+                                <!--BAIRRO-->
+                                <label for="bairro" class="col-2 col-form-label text-left pl-5">Bairro</label>
+                                <input type="text" class="form-control col" id="bairro" placeholder="Bairro" title="Digite o seu bairro" required> 
+                            </div> 
+
+                            <div class="form-row my-2">
+                                <!--CIDADE-->
+                                <label for="cidade" class="col-2 col-form-label">Cidade</label>
+                                <input type="text" class="form-control col" id="cidade" placeholder="Cidade" title="Digite sua cidade" required>  
+        
+                                <!--ESTADO-->
+                                <label for="estado" class="col-2 col-form-label text-left pl-5">Estado</label>
+                                <input type="text" class="form-control col" id="estado" pattern="[A-Z]{2}" placeholder="UF" title="Digite a sigla do seu estado, por exemplo: ES" required> 
+                            </div> 
+
+                    </fieldset><!--FIM DO FIELDSET ENDEREÇO-->
+                                         
+                </fieldset>
+            </div><!--FIM DA DIV JUMBOTRON HOSPEDE-->
+
+            <a id="campos-hotel"></a>
+            <br /><br />
+            <div class="jumbotron fundo-claro shadow p-3 mb-5" >
+                <fieldset id="hotel" class="border p-2 rounded">
+                    <legend class="w-auto"><i class="fas fa-hotel mr-2"></i>Hotel</legend>
+                    
+                    <div class="form-row m-2">
+                        <label for="nome" class="col-2 col-form-label">Nome do hotel</label>
+                        <input type="text" class="form-control col" id="nome-hotel" placeholder="Digite o nome do hotel"   title="O nome do hotel deve conter no mínimo três letras" required>  
+                    </div><!--FIM DA DIV DO INPUT NAME DO HOTEL-->
+
+                    <div class="form-row m-2">
+                        <label for="sobre-hotel" class="col-2 col-form-label">Sobre o hotel</label>
+                        <textarea class="form-control col" name="sobre-hotel" rows="5" ></textarea>
+                    </div><!--FIM DA DIV DO INPUT SOBRE O HOTEL-->
+
+                    <div class="form-row m-2">
+                        <label for="mensagem-automatica" class="col-2 col-form-label">Mensagem automática para o hóspede</label>
+                        <textarea class="form-control col" name="mensagem-automatica" rows="5" ></textarea>
+                    </div><!--FIM DA DIV DO INPUT SOBRE O HOTEL-->
+
+                    <fieldset class="my-4 mx-3">
+                        <legend><h5>Fotos</h5></legend>
+
+                        <!--LOGO DO HOTEL-->
+                        <div class="form-row my-2"> 
+                            <label for="logo-hotel" class="col-2 col-form-label">Logo do Hotel</label>
+                            <div class="custom-file col">
+                                <input type="file" class="custom-file-input" id="logo-hotel">
+                                <label class="custom-file-label" for="logo-hotel">Escolher arquivo</label>
+                            </div>
+                        </div>   
+
+
+
+                        <!--FOTOS DO HOTEL-->
+                        <div class="form-row my-2"> 
+                            <label for="fotos-hotel" class="col-2 col-form-label">Fotos do Hotel</label>
+                            <div class="custom-file col">
+                                <input type="file" class="custom-file-input" id="fotos-hotel">
+                                <label class="custom-file-label" for="fotos-hotel">Escolher arquivo</label>
+                            </div>
+                        </div>    
+
+                        <!--FOTOS DO HALL DE ENTRADA-->
+                        <div class="form-row my-2 align-items-center"> 
+                            <label for="fotos-hall" class="col-2 col-form-label">Fotos do Hall de Entrada</label>
+                            <div class="custom-file col">
+                                <input type="file" class="custom-file-input " id="fotos-hall">
+                                <label class="custom-file-label" for="fotos-hall">Escolher arquivo</label>
+                            </div>
+                        </div>                          
+
+
+                    </fieldset><!--FIM DO FIELDSET FOTOS DO HOTEL-->
+
+                    <fieldset class="my-4 mx-3">
+                        <legend><h5>Contato</h5></legend>
+                            
+                            <!--EMAIL-->
+                            <div class="form-row my-2">    
+                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <input type="email" class="form-control col" id="email" placeholder="nome@provedor.com"  title="Digite seu endereço de email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}" required> 
+                            </div>    
+                             
+
+                            <div class="form-row my-2">
+                                <!--TELEDONE FIXO-->
+                                <label for="tel-fixo" class="col-2 col-form-label">Telefone Fixo</label>
+                                <input type="tel" class="form-control col" id="tel-fixo" pattern="[0-9]{3} [0-9]{4}-[0-9]{4}" placeholder="DDD 1234-5678" title="Digite o telefone no formato: DDD 12345-6789" required>  
+        
+                                <!--RG-->
+                                <label for="tel-celular" class="col-2 col-form-label text-left pl-5">Celular</label>
+                                <input type="tel" class="form-control col" id="tel-celular" pattern="[0-9]{3} [0-9]{5}-[0-9]{4}" placeholder="DDD 12345-6789" title="Digite o telefone no formato: DDD 12345-6789" required> 
+        
+                            </div><!--FIM DA DIV TELEFONES DO HOTEL-->
+
+                    </fieldset><!--FIM DO FIELDSET CONTATO DO HOTEL-->
+
+                    <fieldset class="my-4 mx-3">
+                        <legend><h5>Endereço</h5></legend>
+                            
+                            <div class="form-row my-2">    
+                                <!--LOGRADOURO-->
+                                <label for="logradouro" class="col-2 col-form-label">Logradouro</label>
+                                <input type="text" class="form-control col-7" id="logradouro" placeholder="Rua, avenida, beco..."   title="Seu endereço deve conter no mínimo três letras" required> 
+
+                                <!--NÚMERO-->
+                                <label for="numero" class="col-1 col-form-label text-center"> N° </label>
+                                <input type="number" class="form-control col" id="numero-hotel" placeholder="123" title="Digite o número da sua casa" required> 
+                            </div>     
+
+                            <div class="form-row my-2">  
+                                <!--COMPLEMENTO--> 
+                                <label for="complemento" class="col-2 col-form-label">Complemento</label>
+                                <input type="text" class="form-control col" id="complemento" placeholder="Próximo a..." > 
+                            </div>
+
+                            <div class="form-row my-2">
+                                <!--CEP-->
+                                <label for="cep" class="col-2 col-form-label">CEP</label>
+                                <input type="text" class="form-control col" id="cep" pattern="[0-9]{2}.[0-9]{3}-[0-9]{3}" placeholder="12.345-330" title="Digite o CEP no formato 12.345-330" required>  
+        
+                                <!--BAIRRO-->
+                                <label for="bairro" class="col-2 col-form-label text-left pl-5">Bairro</label>
+                                <input type="text" class="form-control col" id="bairro" placeholder="Bairro" title="Digite o seu bairro" required> 
+                            </div> 
+
+                            <div class="form-row my-2">
+                                <!--CIDADE-->
+                                <label for="cidade" class="col-2 col-form-label">Cidade</label>
+                                <input type="text" class="form-control col" id="cidade" placeholder="Cidade" title="Digite sua cidade" required>  
+        
+                                <!--ESTADO-->
+                                <label for="estado" class="col-2 col-form-label text-left pl-5">Estado</label>
+                                <input type="text" class="form-control col" id="estado" pattern="[A-Z]{2}" placeholder="UF" title="Digite a sigla do seu estado, por exemplo: ES" required> 
+                            </div> 
+
+                    </fieldset><!--FIM DO FIELDSET ENDEREÇO DO HOTEL-->
+
+
+                </fieldset>   
+            </div><!--FIM DA DIV JUMBOTRON HOTEL-->   
+
+            <a id="campos-quartos"></a>
+            <br /><br />
+            <div class="jumbotron fundo-claro shadow p-3 mb-5" >
+                <fieldset id="quartos" class="border p-2 rounded">
+                    <legend class="w-auto"><i class="fas fa-bed mr-2"></i>Quartos</legend>
+
+
+<!-----------------------------------------------CATEGORIA 1------------------------------------------------------------------>
+                    <h5 class="mt-4 mb-2 mx-3" >Categoria 1</h5>
+                    
+                    <!--HABILITAR/DESABILITAR CATEGORIA-->
+                    <div class="form-row mb-3 mx-3">    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"  name="categoria1" id="categoria1" value="1" onclick="habilitarCategoria(1,'categoria1-quarto','seletor-categoria1');">
+                            <label class="form-check-label">Habilitar</label>
+                        </div>
+                        <div class="form-check form-check-inline mx-2">
+                            <input class="form-check-input" type="radio"  name="categoria1" id="categoria1" value="0" onclick="habilitarCategoria(0,'categoria1-quarto','seletor-categoria1');">
+                            <label class="form-check-label">Desabilitar</label>
+                        </div>
+                    </div> 
+                     
+                    <!--CAMPOS DO FORMULÁRIO DA CATEGORIA-->
+                    <fieldset id="categoria1-quarto" class="mb-4 mx-3" disabled>
+
+                        <!--NOME DA CATEGORIA-->
+                        <div class="form-row">
+                            <label for="nome-quarto1" class="col-2 col-form-label">Tipo do quarto</label>
+                            <input type="text" class="form-control col" id="nome-quarto1" placeholder="Digite o nome do hotel"   title="O nome da categoria deve conter no mínimo três letras" required>  
+                        </div><!--FIM DA DIV DO INPUT NAME DA CATEGORIA-->
+    
+                        <div class="form-row">
+                            <label for="sobre-quarto1" class="col-2 col-form-label">Sobre este quarto</label>
+                            <textarea class="form-control col" name="sobre-quarto1" rows="5" placeholder="O que é oferecido neste quarto?"></textarea>
+                        </div><!--FIM DA DIV DO INPUT SOBRE O HOTEL-->
+
+                        <!--FOTOS DO QUARTO-->
+                        <div class="form-row my-2"> 
+                            <label for="fotos-quarto1" class="col-2 col-form-label">Fotos do quarto</label>
+                            <div class="custom-file col">
+                                <input type="file" class="custom-file-input" id="fotos-quarto1">
+                                <label class="custom-file-label" for="fotos-quarto1">Escolher arquivo</label>
+                            </div>
+                        </div>   
+
+                        <div class="form-row my-2"> 
+                            <label for="diaria-quarto1" class="col-2 col-form-label">Valor da diária</label>
+                            <input type="number" min="1" class="form-control col-2" id="diaria-quarto1" placeholder="R$ 999,99"  title="Digite o valor da diária deste quarto" required> 
+                        </div>   
+                    </fieldset><!--FIM DO FIELDSET CATEGORIA 1-->
+<!-----------------------------------------------FIM DA CATEGORIA 1------------------------------------------------------------> 
+
+
+<!-----------------------------------------------CATEGORIA 2------------------------------------------------------------------>
+                    <h5 class="mt-4 mb-2 mx-3" >Categoria 2</h5>
+                    
+                <!--HABILITAR/DESABILITAR CATEGORIA-->
+                    <div class="form-row mb-3 mx-3">    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio"  name="categoria2" id="categoria2" value="1" onclick="habilitarCategoria(1,'categoria2-quarto','seletor-categoria2');">
+                        <label class="form-check-label">Habilitar</label>
+                    </div>
+                    <div class="form-check form-check-inline mx-2">
+                        <input class="form-check-input" type="radio"  name="categoria2" id="categoria2" value="0" onclick="habilitarCategoria(0,'categoria2-quarto','seletor-categoria2');">
+                        <label class="form-check-label">Desabilitar</label>
+                    </div>
+                    </div> 
+                 
+                <!--CAMPOS DO FORMULÁRIO DA CATEGORIA-->
+                    <fieldset id="categoria2-quarto" class="mb-4 mx-3" disabled>
+
+                    <!--NOME DA CATEGORIA-->
+                    <div class="form-row">
+                        <label for="nome-quarto2" class="col-2 col-form-label">Tipo do quarto</label>
+                        <input type="text" class="form-control col" id="nome-quarto2" placeholder="Digite o nome do hotel"   title="O nome da categoria deve conter no mínimo três letras" required>  
+                    </div><!--FIM DA DIV DO INPUT NAME DA CATEGORIA-->
+
+                    <div class="form-row">
+                        <label for="sobre-quarto2" class="col-2 col-form-label">Sobre este quarto</label>
+                        <textarea class="form-control col" name="sobre-quarto2" rows="5" placeholder="O que é oferecido neste quarto?"></textarea>
+                    </div><!--FIM DA DIV DO INPUT SOBRE O HOTEL-->
+
+                    <!--FOTOS DO QUARTO-->
+                    <div class="form-row my-2"> 
+                        <label for="fotos-quarto2" class="col-2 col-form-label">Fotos do quarto</label>
+                        <div class="custom-file col">
+                            <input type="file" class="custom-file-input" id="fotos-quarto2">
+                            <label class="custom-file-label" for="fotos-quarto2">Escolher arquivo</label>
+                        </div>
+                    </div>   
+
+                    <div class="form-row my-2"> 
+                        <label for="diaria-quarto2" class="col-2 col-form-label">Valor da diária</label>
+                        <input type="number" min="1" class="form-control col-2" id="diaria-quarto2" placeholder="R$ 999,99" title="Digite o valor da diária deste quarto" required> 
+                    </div>   
+
+                    </fieldset><!--FIM DO FIELDSET CATEGORIA 2-->
+<!-----------------------------------------------FIM DA CATEGORIA 2------------------------------------------------------------> 
+
+
+<!-----------------------------------------------CATEGORIA 3------------------------------------------------------------------>
+                    <h5 class="mt-4 mb-2 mx-3" >Categoria 3</h5>
+                    
+                <!--HABILITAR/DESABILITAR CATEGORIA-->
+                    <div class="form-row mb-3 mx-3">    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio"  name="categoria3" id="categoria3" value="1" onclick="habilitarCategoria(1,'categoria3-quarto','seletor-categoria3');">
+                        <label class="form-check-label">Habilitar</label>
+                    </div>
+                    <div class="form-check form-check-inline mx-2">
+                        <input class="form-check-input" type="radio"  name="categoria3" id="categoria3" value="0" onclick="habilitarCategoria(0,'categoria3-quarto','seletor-categoria3');">
+                        <label class="form-check-label">Desabilitar</label>
+                    </div>
+                    </div> 
+ 
+                <!--CAMPOS DO FORMULÁRIO DA CATEGORIA-->
+                    <fieldset id="categoria3-quarto" class="mb-4 mx-3" disabled>
+
+                    <!--NOME DA CATEGORIA-->
+                    <div class="form-row">
+                        <label for="nome-quarto3" class="col-2 col-form-label">Tipo do quarto</label>
+                        <input type="text" class="form-control col" id="nome-quarto3" placeholder="Digite o nome do hotel"   title="O nome da categoria deve conter no mínimo três letras" required>  
+                    </div><!--FIM DA DIV DO INPUT NAME DA CATEGORIA-->
+
+                    <div class="form-row">
+                        <label for="sobre-quarto3" class="col-2 col-form-label">Sobre este quarto</label>
+                        <textarea class="form-control col" name="sobre-quarto3" rows="5" placeholder="O que é oferecido neste quarto?"></textarea>
+                    </div><!--FIM DA DIV DO INPUT SOBRE O HOTEL-->
+
+                    <!--FOTOS DO QUARTO-->
+                    <div class="form-row my-2"> 
+                        <label for="fotos-quarto3" class="col-2 col-form-label">Fotos do quarto</label>
+                        <div class="custom-file col">
+                            <input type="file" class="custom-file-input" id="fotos-quarto3">
+                            <label class="custom-file-label" for="fotos-quarto3">Escolher arquivo</label>
+                        </div>
+                    </div>   
+
+                    <div class="form-row my-2"> 
+                        <label for="diaria-quarto3" class="col-2 col-form-label">Valor da diária</label>
+                        <input type="number" min="1" class="form-control col-2" id="diaria-quarto3" placeholder="R$ 999,99" title="Digite o valor da diária deste quarto" required> 
+                    </div>   
+
+                    </fieldset><!--FIM DO FIELDSET CATEGORIA 2-->
+<!-----------------------------------------------FIM DA CATEGORIA 3------------------------------------------------------------>
+
+
+
+                </fieldset>
+            </div><!--FIM DA JUMBOTRON QUARTOS--> 
+
+            
+            <a id="campos-estadia"></a>
+            <br /><br />
+            <div class="jumbotron fundo-claro shadow p-3 mb-5" >
+                <fieldset id="estadia" class="border p-2 rounded">
+                    <legend class="w-auto"><i class="fas fa-concierge-bell mr-2"></i>Estadia</legend>
+                    
+                    <div class="form-row m-2">
+                        <!--DATA DE ENTRADA-->
+                        <label for="data-entrada" class="col-2 col-form-label">Data de Entrada</label>
+                        <input type="date" class="form-control col" min="1899-01-01" id="data-entrada" title="Escolha a data de entrada" onblur=" habilitaDataSaida();" required>  
+
+                        <!--DATA DE SAÍDA-->
+                        <label for="data-saida" class="col-2 col-form-label text-left pl-5">Data de Saída</label>
+                        <input type="date" class="form-control col" id="data-saida" title="Escolha a data de sáida" onblur="validaDataSaida();" required disabled> 
+
+                    </div><!--FIM DA DIV DATA DE ENTRADA E SAÍDA-->
+
+
+
+                    <div class="form-row m-2">
+                        <!--Categorias dos quartos-->
+                        <label for="categoria-quartos" class="col-2 col-form-label ">Categoria do quarto</label>
+                        <select class="form-control col" onblur="computaValorDaEstadia(this)">
+                            <option id="seletor-categoria1" value="1" disabled>Categoria 1</option>
+                            <option id="seletor-categoria2" value="2" disabled>Categoria 2</option>
+                            <option id="seletor-categoria3" value="3" disabled>Categoria 3</option>
+                        </select>
+
+                    </div><!--FIM DA DIV DO SELECT CATEGORIA-->
+
+
+                    <div class="form-row m-2 mt-4">
+                            <!--QUANTIDADE DE DIAS-->
+                            <label for="qtd-dias" class="col-2 col-form-label">Quantidade de dias</label>
+                            <input type="number" class="form-control col-2" id="qtd-dias" placeholder="-" title="Total de dias" readonly> 
+
+
+                            <!--VALOR TOTAL-->
+                            <label for="valor-total" class="col-2 col-form-label ml-5">Valor da diária</label>
+                            <input type="number" class="form-control col-2" id="valor-total" placeholder="R$ -" title="Valor total da hospedagem" readonly> 
+
+                        
+                    </div><!--FIM DA QTD DIAS E VALOR TOTAL-->
+
+                </fieldset>
+            </div><!--FIM DA JUMBOTRON ESTADIA-->
+
+
+
+            <a id="campos-pagamento"></a>
+            <br /><br />
+            <div class="jumbotron fundo-claro shadow p-3 mb-5" >
+                <fieldset id="estadia" class="border p-3 rounded">
+                    <legend class="w-auto"><i class="fas fa-money-bill-wave mr-2"></i>Pagamento</legend>
+                    <h5 class="m-2">Escolha a forma de pagamento</h5>
+
+                    <div class="form-check mx-3 mt-4">
+                        <input class="form-check-input" type="radio" name="escolha-pagamento" id="escolha-pagamento" onclick="habilitarPagamento(1);" >
+                        <label class="form-check-label" for="escolha-pagamento" >Cartão de Crédito</label>
+                            <div class="form-row m-2">
+                                <!--ESCOLHA DO CARTÃO DE CRÉDITO-->
+                                <label for="bandeira-cc" class="col-2 col-form-label ">Bandeira</label>
+                                <select id="bandeira-cc" class="form-control col-3" disabled>
+                                    <option id="cc-1" value="1" >Visa</option>
+                                    <option id="cc-2" value="2" >Mastercard</option>
+                                    <option id="cc-3" value="3" >American Express</option>
+                                </select>
+        
+                            </div><!--FIM DA DIV SELECT DO CARTÃO DE CRÉDITO-->                       
+                    </div><!--FIM DA DIV RADIO CARTÃO DE CRÈDITO-->
+
+                    <div class="form-check mx-3 mt-4">
+                        <input class="form-check-input" type="radio" name="escolha-pagamento" id="escolha-pagamento" onclick="habilitarPagamento(0);">
+                        <label class="form-check-label" for="escolha-pagamento">Boleto</label>
+                        
+                            <div class="form-row m-2">
+                                <div class="text-center col-2 col-form-label mx-2">
+                                    <button id="gerar-boleto" type="button" class="btn  btn-escuro fundo-escuro1" onclick="" disabled>Gerar boleto</button>
+                                </div>
+                                
+                    </div><!--FIM DA DIV RADIO CARTÃO DE CRÈDITO-->
+
+
+
+                
+                </fieldset>
+            </div><!--FIM DA JUMBOTRON PAGAMENTO-->
+
+            <!--BOTAO ENVIAR-->
+            <div class="container form-group text-right">      
+                    <input type="submit" value="Enviar" class="btn  btn-escuro btn-lg fundo-escuro1 ">
+            </div>  
+
+            
+        </form>
+        
+    </div><!--FIM DA DIV CONTAINER-->
+
+    </body>
+    <footer class="container-fluid mt-5 p-5 fundo-escuro2-sem-link fonte" width="20px">
+        <p class="text-center">&reg; Todos os direitos reservados. Desenvolvido por Dirceu Junior</p>
+
+
+    </footer>
+
+</html>
